@@ -21,7 +21,7 @@ export default function AllItems() {
       };
 
     useEffect(() => {
-        fetch("https://624e08bc53326d0cfe566ebc.mockapi.io/country")
+        fetch("https://raw.githubusercontent.com/nshntarora/Indian-Cities-JSON/master/cities.json")
         .then((e) => e.json())
         .then((res)=> setData(res))
 },[])
