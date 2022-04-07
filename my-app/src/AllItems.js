@@ -1,24 +1,14 @@
 import React, { useState,useEffect } from "react";
 import { ListGroup , ListGroupItem } from "react-bootstrap";
+import SelectedItems from "./SelectedItems";
 import { Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import './App.css';
 
 
 export default function AllItems() {
     const [data, setData] = useState([])
-    const [checked, setChecked] = useState([]);
-
-    const handleCheck = (event) => {
-        var updatedList = [...checked];
-        if (event.target.checked) {
-          updatedList = [...checked, event.target.value];
-        } else {
-          updatedList.splice(checked.indexOf(event.target.value), 1);
-        }
-        setChecked(updatedList);
-      };
+    const [tasks, setTasks] = useState([])
 
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/nshntarora/Indian-Cities-JSON/master/cities.json")
@@ -26,8 +16,19 @@ export default function AllItems() {
         .then((res)=> setData(res))
 },[])
 
+
+const addTask = (event) => {
+    var checkList = [...tasks];
+    if (event.target.tasks) {
+        checkList = [...tasks, event.target.value];
+    } else {
+        checkList.splice(tasks.indexOf(event.target.value), 1);
+    }
+    setTasks(checkList);
+} 
+
 return (
-    <div>
+    <div className="App" >
         <ListGroup>
             <h4>AllItems</h4>
             {data.map( (d) => <ListGroupItem variant="info">
@@ -35,10 +36,14 @@ return (
                 type="checkbox"
                 id={d.id}
                 label={d.name}
-                onClick={handleCheck}
+                onClick={addTask} 
                 />
-            </ListGroupItem>)}
+            </ListGroupItem>
+            )}
         </ListGroup>
+        <SelectedItems
+           selectedItems={tasks}
+        />
     </div>
 )
 }

@@ -1,15 +1,18 @@
-import React, { useState,useEffect } from "react";
+import React from 'react'
+import {ListGroup} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AllItems from "./AllItems";
-
-
-export default function SelectedItems() {
-
-
-
-      return (
-        <div>
-               <h4>SelectedItems</h4>
-        </div>
-      );  
+export default function SelectedItems(props) {
+  const { selectedItems } = props;
+  return (
+    <ListGroup>
+        <h4>Selected Items</h4>
+      {selectedItems.map( (d) => <ListGroup.Item>
+       {d}
+        </ListGroup.Item>
+      )}
+   </ListGroup>
+  )
 }
+
+
+
