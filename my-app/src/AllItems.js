@@ -11,7 +11,7 @@ export default function AllItems() {
     const [tasks, setTasks] = useState([])
 
     useEffect(() => {
-        fetch("https://624c52f7d71863d7a8084ea7.mockapi.io/country")
+        fetch("https://raw.githubusercontent.com/nshntarora/Indian-Cities-JSON/master/cities.json")
         .then((e) => e.json())
         .then((res)=> setData(res))
 },[])
