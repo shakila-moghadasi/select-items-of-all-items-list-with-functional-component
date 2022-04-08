@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function SelectedItems(props) {
   const { selectedItems } = props;
   return (
-    <ListGroup>
+    <ListGroup className="select">
         <h4>Selected Items</h4>
-            {selectedItems.map( (d) => <ListGroup.Item className="text-center" variant="danger">
+            {selectedItems.map( (d) => <ListGroup.Item className="select">
                 {d}
         </ListGroup.Item>
       )}

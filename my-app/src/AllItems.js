@@ -29,9 +29,9 @@ const addTask = (event) => {
 
 return (
     <div className="App" >
-        <ListGroup>
+        <ListGroup className="All">
             <h4>AllItems</h4>
-            {data.map( (d) => <ListGroupItem variant="info">
+            {data.map( (d) => <ListGroupItem className="All">
                <Form.Check 
                 type="checkbox"
                 id={d.id}
