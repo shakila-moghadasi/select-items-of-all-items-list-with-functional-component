@@ -6,8 +6,8 @@ export default function SelectedItems(props) {
   return (
     <ListGroup>
         <h4>Selected Items</h4>
-      {selectedItems.map( (d) => <ListGroup.Item>
-       {d}
+            {selectedItems.map( (d) => <ListGroup.Item className="text-center" variant="danger">
+                {d}
         </ListGroup.Item>
       )}
    </ListGroup>

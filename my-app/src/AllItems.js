@@ -11,7 +11,7 @@ export default function AllItems() {
     const [tasks, setTasks] = useState([])
 
     useEffect(() => {
-        fetch("https://raw.githubusercontent.com/nshntarora/Indian-Cities-JSON/master/cities.json")
+        fetch("https://624c52f7d71863d7a8084ea7.mockapi.io/country")
         .then((e) => e.json())
         .then((res)=> setData(res))
 },[])
@@ -19,7 +19,7 @@ export default function AllItems() {
 
 const addTask = (event) => {
     var checkList = [...tasks];
-    if (event.target.tasks) {
+    if (event.target.checked) {
         checkList = [...tasks, event.target.value];
     } else {
         checkList.splice(tasks.indexOf(event.target.value), 1);
@@ -41,9 +41,9 @@ return (
             </ListGroupItem>
             )}
         </ListGroup>
-        <SelectedItems
-           selectedItems={tasks}
-        />
+        <SelectedItems 
+            selectedItems={tasks}
+        />    
     </div>
 )
 }
