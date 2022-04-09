@@ -20,12 +20,12 @@ export default function AllItems() {
 
 const addTask = (event) => {
     var checkList = [...tasks];
+    const out = data[event.target.id-1]
     if (event.target.checked) {
-        const out = data[event.target.id-1]
         checkList = [...tasks, out["name"]];
         console.log(event.target.id);
     } else {
-        checkList.splice(tasks.indexOf(event.target.value), 1);
+        checkList.splice(tasks.indexOf(out["name"]), 1);
     }
     setTasks(checkList);
 } 
