@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
+}
+.All {
+  background-color: rgb(169, 207, 216);
+  width: 30vw;
+}
+.select {
+  background-color: rgb(243, 125, 160);
+  width: 30vw;
+}
