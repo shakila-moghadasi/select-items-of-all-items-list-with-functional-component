@@ -4,7 +4,7 @@ import { useState , useEffect } from "react";
 import { Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import SlelectedItems
+import SlelectedItems from './SelectedItems';
 
 
 export const checkcontext = React.createContext()
