@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { Component, useDebugValue } from 'react'
 import {ListGroup} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-export default function SelectedItems(props) {
-  const { selectedItems } = props;
+import { checkcontext } from './App';
+
+
+
+export default class SelectedItems extends Component {
+
+  render(){
   return (
-    <ListGroup className="select">
-        <h4>Selected Items</h4>
-            {selectedItems.map( (d) => <ListGroup.Item className="select">
-                {d}
-        </ListGroup.Item>
-      )}
-   </ListGroup>
-  )
+    <div className="select" >
+    <h4>Selected Items</h4>
+    <checkcontext.Consumer>
+        {(tasks) => tasks.map( (d) =>  
+          <ListGroup className="select">
+          {d}
+          </ListGroup> )}
+   </checkcontext.Consumer>
+   </div>
+   )
+}
 }
 
 
